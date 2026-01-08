@@ -1,0 +1,127 @@
+/* 1. Background Setup */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+                url('https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e1-40af-bcae-07a3f8dc141a/f6d7434e-d6de-4185-a6d4-c77a2d08737b/US-en-20220502-popsignuptwoweeks-perspective_alpha_website_medium.jpg');
+    background-size: cover;
+    height: 100vh;
+}
+
+/* 2. Logo Style */
+nav .logo {
+    width: 150px;
+    padding: 20px 40px;
+}
+
+/* 3. The Login Box (Centered) */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full screen height */
+}
+
+.login-box {
+    background-color: rgba(0, 0, 0, 0.75); /* See-through black */
+    padding: 60px 68px 40px;
+    width: 450px;
+    border-radius: 4px;
+    color: white;
+}
+
+.login-box h2 {
+    font-size: 32px;
+    margin-bottom: 28px;
+}
+
+/* 4. The Inputs */
+.input-group {
+    position: relative;
+    margin-bottom: 16px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 16px 20px;
+    background: #333;
+    border: none;
+    border-radius: 4px;
+    color: white;
+    font-size: 16px;
+    box-sizing: border-box; /* Ensures padding doesn't break width */
+}
+
+/* The Placeholder Label styling (Advanced Visuals) */
+.input-group label {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    transform: translateY(-50%);
+    color: #8c8c8c;
+    pointer-events: none; /* Let clicks pass through to the input */
+    transition: 0.2s;
+}
+
+/* When input is focused, move label up (We will fix this logic later) */
+.input-group input:focus + label,
+.input-group input:valid + label {
+    font-size: 12px;
+    top: 10px;
+    transform: translateY(0);
+}
+
+/* 5. The Sign In Button */
+button {
+    width: 100%;
+    padding: 16px;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+/* 6. Extra Text Links */
+.extras {
+    display: flex;
+    justify-content: space-between;
+    color: #b3b3b3;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.extras a {
+    color: #b3b3b3;
+    text-decoration: none;
+}
+
+.signup-link {
+    color: #737373;
+    font-size: 16px;
+    margin-top: 40px;
+}
+
+.signup-link a {
+    color: white;
+    text-decoration: none;
+}
+/* Style the Forgot Password link */
+.forgot-password {
+    display: block; /* Makes it sit on its own line if needed */
+    color: #b3b3b3; /* Light grey (Netflix standard) */
+    text-decoration: none; /* Remove the underline */
+    font-size: 13px;
+    margin-top: 10px; /* Give it space from the big red button */
+    margin-bottom: 10px; /* Give it space from 'Remember me' */
+}
+
+.forgot-password:hover {
+    text-decoration: underline; /* Add underline only when hovering */
+    color: white; /* Make it bright white on hover */
+}

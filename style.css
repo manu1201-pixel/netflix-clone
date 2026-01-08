@@ -1,0 +1,279 @@
+/* 1. Reset the default browser spacing */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: black; /* Netflix is dark */
+    font-family: Arial, sans-serif;
+}
+
+/* 2. The Container (Flexbox Parent) */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    
+    /* 👇 NEW: Float on top of the image */
+    position: absolute;
+    top: 0;
+    width: 100%; /* Ensure it stretches across */
+    z-index: 100; /* Force it to stay on top */
+    box-sizing: border-box; /* Ensures padding doesn't break the width */
+}
+
+/* 3. The Logo Style */
+.logo {
+    color: #e50914; /* Official Netflix Red */
+    font-size: 40px;
+    margin: 0;
+    cursor: pointer;
+}
+
+/* 4. The Button Style */
+.signin-btn {
+    background-color: #e50914; /* Red Background */
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px; /* Rounded corners */
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.signin-btn:hover {
+    background-color: #c11119; /* Darker red when hovering */
+}
+
+.hero {
+    height: 100vh;
+    width: 100%;
+    
+    /* Keep your background logic */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://assets.nflxext.com/ffe/siteui/vlv3/f841d4c7-10e1-40af-bcae-07a3f8dc141a/f6d7434e-d6de-4185-a6d4-c77a2d08737b/US-en-20220502-popsignuptwoweeks-perspective_alpha_website_medium.jpg');
+    
+    background-size: cover;
+    background-position: center;
+    
+    /* 👇 CHANGED: Standard positioning */
+    position: relative; 
+    
+    /* 👇 DELETED: margin-top: -80px; */
+    /* 👇 DELETED: z-index: -1; */
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+/* 6. The Text Styling */
+.hero-content h1 {
+    font-size: 50px;
+    font-weight: 900; /* Extra Bold */
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+/* 7. The Input Field & Button */
+.email-signup {
+    display: flex;         /* Makes the input and button sit side-by-side */
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.email-signup input {
+    padding: 15px;
+    width: 300px;
+    font-size: 16px;
+    border: 1px solid #333;
+    border-radius: 4px;
+    background: rgba(0,0,0,0.5); /* Semi-transparent black */
+    color: white;
+}
+
+.email-signup button {
+    padding: 15px 30px;
+    font-size: 24px;
+    background-color: #e50914;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    margin-left: 10px;
+    border-radius: 4px;
+}
+
+.email-signup button:hover {
+    background-color: #c11119;
+}
+/* 8. The Grey Separator Bar */
+.separator {
+    width: 100%;
+    height: 8px;
+    background-color: #222;
+}
+
+/* 9. The Feature Row (Flexbox Parent) */
+.feature-section {
+    display: flex; /* Side by side */
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    padding: 50px 10%; /* 50px Top/Bottom, 10% Left/Right */
+}
+
+/* 10. The Text & Image Columns */
+.feature-text {
+    width: 50%; /* Takes half the screen */
+    padding-right: 20px;
+}
+
+.feature-text h2 {
+    font-size: 50px;
+    margin-bottom: 8px;
+}
+
+.feature-text p {
+    font-size: 24px;
+}
+
+.feature-img {
+    width: 50%; /* Takes the other half */
+    text-align: center;
+}
+
+.feature-img img {
+    width: 100%; /* Image fills its box */
+    z-index: 2; /* Important for later */
+}
+/* 11. The Video Injection Logic */
+
+/* The Stage (Must be relative so we can trap the video inside) */
+.feature-img {
+    position: relative;
+    z-index: 1; /* Establishes a stacking order */
+}
+
+/* The TV Frame (Sits on top) */
+.tv-frame {
+    position: relative;
+    z-index: 2; /* Higher number = Closer to your eyes */
+}
+
+/* The Video (Sits behind) */
+.tv-video {
+    position: absolute; /* Allows us to move it freely inside the box */
+    top: 20%;      /* Push it down to fit the screen area */
+    left: 13%;     /* Push it right to fit the screen area */
+    width: 73%;    /* Shrink it to fit the screen width */
+    height: 54%;   /* Shrink it to fit the screen height */
+    z-index: -1;   /* Put it BEHIND the TV frame */
+}
+/* 12. The FAQ Section Styling */
+.faq-section {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.faq-section h2 {
+    font-size: 50px;
+    font-weight: 900;
+    margin-bottom: 40px;
+}
+
+.accordion-list {
+    list-style: none; /* Removes bullet points */
+    padding: 0;
+    width: 75%; /* Controls width of the list */
+    margin: 0 auto; /* Centers the list */
+}
+
+.accordion-list li {
+    margin-bottom: 10px; /* Space between questions */
+}
+
+/* The Question Button (What you click) */
+.accordion-question {
+    background-color: #303030;
+    color: white;
+    width: 100%;
+    padding: 20px;
+    border: none;
+    text-align: left;
+    font-size: 25px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    transition: background 0.3s;
+}
+
+.accordion-question:hover {
+    background-color: #505050; /* Lighter grey on hover */
+}
+
+/* The Magic "+" Sign */
+.accordion-question::after {
+    content: '+'; /* Adds a plus sign automatically */
+    font-size: 40px;
+    font-weight: lighter;
+}
+
+/* The Answer Box (Hidden by default) */
+.accordion-answer {
+    background-color: #303030;
+    max-height: 0; /* HIDDEN: Height is 0 */
+    overflow: hidden; /* Ensures text doesn't spill out */
+    transition: max-height 0.3s ease-out; /* Smooth slide animation */
+    border-top: 1px solid black;
+}
+
+.accordion-answer p {
+    padding: 20px;
+    font-size: 22px;
+    text-align: left;
+    margin: 0;
+}
+
+/* --- MOBILE RESPONSIVENESS FOR LANDING PAGE --- */
+@media only screen and (max-width: 768px) {
+    
+    /* Fix Navbar */
+    .navbar { padding: 15px; }
+    .logo { font-size: 24px; }
+    .signin-btn { padding: 5px 10px; font-size: 14px; }
+
+    /* Fix Big Hero Image Text */
+    .hero-content h1 { font-size: 28px; }
+    .hero-content p { font-size: 16px; }
+    
+    /* Stack the Email Input and Button */
+    .email-signup {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .email-signup input { width: 100%; }
+    .email-signup button { width: 100%; margin-left: 0; font-size: 18px; }
+
+    /* Stack the "Enjoy on TV" sections */
+    .feature-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+    .feature-text { width: 100%; padding: 0; }
+    .feature-img { width: 100%; }
+    .feature-text h2 { font-size: 28px; }
+}
+

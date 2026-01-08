@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix - HomePage</title>
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-left">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png" class="nav-logo" alt="Logo">
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Tv Shows</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">New & Popular</a></li>
+                <li><a href="#">My Lists</a></li>
+            </ul>
+        </div>
+
+        <div class="nav-right">
+            <span class="icon">🔍</span>
+            <span class="icon">🔔</span>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" class="nav-avatar" alt="User">
+    
+        </div>
+    </nav>
+
+    <div id="trailer-container" style="display: none; background-color: black; padding: 20px;">
+    <iframe id="video-frame" width="100%" height="400" frameborder="0" allowfullscreen></iframe>
+    <button onclick="closeTrailer()" style="color: white; background: red; border: none; padding: 10px; cursor: pointer; margin-top: 10px;">CLOSE X</button>
+</div>
+
+   <header class="banner">
+    <div class="banner-content">
+        <h1 class="banner-title">Inception</h1>
+        
+        <div class="banner-buttons">
+            <button class="btn play-btn">Play</button>
+            <button class="btn">My List</button>
+        </div>
+        <p class="banner-description">
+            A thief who steals corporate secrets through the use of dream-sharing technology is given the inverse task of planting an idea into the mind of a C.E.O.
+        </p>
+    </div>
+    <div class="banner-fade-bottom"></div>
+</header>
+
+<div class="row">
+    <h2>Netflix Originals</h2>
+    <div class="row-slider">
+        <button class="scroll-btn left" onclick="scrollL('netflix-row')">❮</button>
+        
+        <div class="row-posters" id="netflix-row"></div>
+        
+        <button class="scroll-btn right" onclick="scrollR('netflix-row')">❯</button>
+    </div>
+</div>
+
+<div class="row">
+    <h2>Trending Now</h2>
+    <div class="row-slider">
+        <button class="scroll-btn left" onclick="scrollL('trending-row')">❮</button>
+        
+        <div class="row-posters" id="trending-row"></div>
+        
+        <button class="scroll-btn right" onclick="scrollR('trending-row')">❯</button>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/movie-trailer@2.1.0/index.min.js"></script>
+
+<script src="homepage.js"></script>
+    
+</body>
+</html>
