@@ -16,6 +16,3 @@ A fully responsive, production-grade Netflix Clone built with HTML5, CSS3, and J
 - **API:** The Movie Database (TMDB)
 - **Deployment:** Netlify
 - **Version Control:** Git & GitHub
-
-# Screenshots
-*(You can upload screenshots here later!)*
